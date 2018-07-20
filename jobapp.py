@@ -28,14 +28,7 @@ class jobpage:
         html = self.gethtml()
         self.soup = BeautifulSoup(html, "html.parser")
         return self.soup
-   
-# =============================================================================
-#     def CheckWordIn(self,word,tag):
-#         soup = self.getsoup()
-#         return [a for a in soup.findAll(tag) if word in repr(a)]
-# =============================================================================
-    
-    
+       
 #%% Indeed Specific
 
 class Indeedjoblistpage(jobpage):
@@ -47,7 +40,6 @@ class Indeedjoblistpage(jobpage):
     
     def geturl(self):
         jobmap = self.findjobmap()
-        #jobmap = self.CheckWordIn('jobmap')
         result = []
         for j in jobmap:
             if '/rc/clk?' in j['href']:
@@ -76,17 +68,6 @@ class Indeedjoblistpage(jobpage):
 def IndeedSearch(what, where):
     src = 'https://www.indeed.com'
     return src + '/' + 'jobs?q=' + '+'.join(what.split(' ')) + '&l=' + '%2C+'.join(where.split(', '))
-#%%
-# =============================================================================
-# for u in urllist:
-#     try:
-#         job = jobpage(u)
-#         job.getsoup()
-#         if 'US citizen' in repr(job.soup):
-#             urllist.remove(u)
-#     except:
-#         print(u)
-# =============================================================================
 def CheckWordsIn(strings,urllist):
     urlresult = []
     for u in urllist:
