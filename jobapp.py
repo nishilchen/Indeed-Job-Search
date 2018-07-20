@@ -100,16 +100,3 @@ def CheckWordsIn(strings,urllist):
         except:
             pass
     return urlresult
-#%% Main
-what, where = 'Statistics','Arlington, VA'
-num_pages = 3
-
-url = IndeedSearch(what, where)
-joblist = Indeedjoblistpage(url)
-urllist = joblist.geturls(num_pages)
-len(urllist)
-
-unwanted = ['US citizen', "TS", "SCI", "DoD", "TOP SECRET", "Top secret"]
-urlresult = CheckWordsIn(unwanted,urllist)
-urlresult
-len(urlresult)
