@@ -3,7 +3,7 @@ As an international student, keywords like "US citizen required" or "Security Cl
 
 [Indeed](https://www.indeed.com/) is chosen as the first search engines in this application. Here's the demo:
 
-## Define Parameters:
+### Define Parameters:
 
 * "what" and "where" are two keywords used in Indeed search.
 * Since only 10 results will appear in a search page, "num_pages" control the number of searches.
@@ -14,13 +14,16 @@ num_pages = 3
 unwanted = ['US citizen', "TS", "SCI", "DoD", "TOP SECRET", "Top secret"]
 ```
 
+### Create Indeedjoblistpage object
+
+"joblist" is an Indeedjoblistpage object.  
 ```
+import jobapp
 url = jobapp.IndeedSearch(what, where)
 joblist = jobapp.Indeedjoblistpage(url)
 urllist = joblist.geturls(num_pages)
 urllist
 ```
-
 ```
 Out[426]: 
 ['https://www.indeed.com/viewjob?jk=e19e553bdb828d6d&fccid=1544766d4c2915b0&vjs=3',
