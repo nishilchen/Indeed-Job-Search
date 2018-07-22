@@ -1,9 +1,13 @@
 # Indeed Job Search
 As an international student, keywords like "US citizen required" or "Security Clearance" are the most unwanted requirement in the job search. This project aims at filtering out jobs with these keywords.
 
-[Indeed](https://www.indeed.com/)
+[Indeed](https://www.indeed.com/) is chosen as the first search engines in this application. Here's the demo:
 
-Here's the demo:
+## Define Parameters:
+
+* "what" and "where" are two keywords used in Indeed search.
+* Since only 10 results will appear in a search page, "num_pages" control the number of searches.
+* Jobs with keywords in "unwanted" will be filtered out.
 ```
 what, where = 'Statistics','Arlington, VA'
 num_pages = 3
