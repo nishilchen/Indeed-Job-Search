@@ -14,9 +14,8 @@ num_pages = 3
 unwanted = ['US citizen', "TS", "SCI", "DoD", "TOP SECRET", "Top secret"]
 ```
 
-### Create Indeedjoblistpage object
+### Obtain list of URLs from Indeed search
 
-"joblist" is an Indeedjoblistpage object.  
 ```
 import jobapp
 url = jobapp.IndeedSearch(what, where)
@@ -57,10 +56,15 @@ Out[426]:
  'https://www.indeed.com/viewjob?jk=83a2bfe349523407&fccid=bb384ca0a6d3d491&vjs=3',
  'https://www.indeed.com/viewjob?jk=76ff2f6dc1352a25&fccid=4e041af1d0af1bc8&vjs=3']
 ```
+
+Since the num_pages equals 3 in this demo, geturls returns 30 results.
 ```
 len(urllist)
 Out[427]: 30
 ```
+
+### Filter out jobs with unwanted keywords
+
 ```
 urlresult = jobapp.CheckWordsIn(unwanted,urllist)
 urlresult
@@ -86,6 +90,8 @@ Out[431]:
  'https://www.indeed.com/viewjob?jk=2aac34dd92cffccb&fccid=fe2d21eef233e94a&vjs=3',
  'https://www.indeed.com/viewjob?jk=3fa7ae24b7480b79&fccid=6d96c13c41c1672b&vjs=3']
 ```
+
+12 jobs are filtered out in this example. 
 ```
 len(urlresult)
 Out[432]: 18
