@@ -1,5 +1,5 @@
 # Indeed Job Search
-As an international student, keywords like "US citizen required" or "Security Clearance" are the most unwanted requirement in the job search. This project aims at filtering out jobs with these keywords.
+As an international student, keywords like "US citizen required" or "Security Clearance" are the most unwanted requirement in the job search. This project aims at filtering out jobs with these keywords, and automatically send list of job links through email.
 
 [Indeed](https://www.indeed.com/) is chosen as the first search engines in this application. Here's the demo:
 
